@@ -1,11 +1,14 @@
 import * as express from 'express';
+import echoRouter from './routes/echo';
+
 const app = express();
 
+// const Router: express.Router = express.Router();
 app.get('/', (req: express.Request, res: express.Response) => {
   res.send('Hello typescript express!');
 });
 
-app.use('/', require('./routes/echo'));
+app.use('/', echoRouter);
 
 interface Err extends Error {
   status: number;

@@ -1,8 +1,8 @@
 import { Router } from 'express';
+import * as echoControllers from '../controllers/echo';
 
 const router = Router();
 
-import * as echo from '../controllers/echo';
-router.get('/echo', echo.echo);
+router.get('/echo', echoControllers.echo);
 
-module.exports = router;
+export default router;
