@@ -9,5 +9,5 @@ describe('echo.test', () => {
     const msg = 'messgae';
     const res = await req.get(`/echo?msg=${msg}`).expect(200);
     expect(res.body.msg).to.equal(msg);
-  })
-})
+  });
+});
