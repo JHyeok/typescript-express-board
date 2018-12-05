@@ -5,15 +5,18 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "tsc && node dist",
+    "start": "tsc && node dist/server.js",
+    "dev": "ts-node ./src/server.ts",
     "test": "mocha --require ts-node/register \"test/**/*.test.ts\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/morgan": "^1.7.35",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
   },
   "devDependencies": {
     "@types/body-parser": "^1.17.0",

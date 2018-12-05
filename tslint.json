@@ -11,7 +11,8 @@
         "no-consecutive-blank-lines": false,
         "object-literal-sort-keys": false,
         "no-var-requires": false,
-        "no-console": false
+        "no-console": false,
+        "ordered-imports": false
     },
     "rulesDirectory": []
 }

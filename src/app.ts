@@ -1,6 +1,6 @@
 import * as bodyParser from 'body-parser';
 import * as express from 'express';
-import echoRouter from './routes/echo';
+import lineRouter from './routes/line';
 
 class App {
   public app: express.Application;
@@ -15,29 +15,20 @@ class App {
     this.app.use(bodyParser.json());
     this.app.use(bodyParser.urlencoded({ extended: false}));
   }
-  // TODO : 리스폰 값 오류 체크
+
   private router(): void {
-    this.app.get('/', (req: express.Request, res: express.Response) => {
-      res.send('Hi, Class');
-      console.log(res.send.toString);
+    this.app.use('/', lineRouter);
+    this.app.get('/', (req: express.Request, res: express.Response, next: express.NextFunction) => {
+      res.send('Hello, TypeScript-express');
+      console.log('done!');
     });
-    this.app.use('/', echoRouter);
   }
 }
 
-export default new App().app;
+export default App;
 
 // TODO : error handler 적용
 /*
-const app = express();
-
-// const Router: express.Router = express.Router();
-app.get('/', (req: express.Request, res: express.Response) => {
-  res.send('Hello typescript express!');
-});
-
-app.use('/', echoRouter);
-
 interface Err extends Error {
   status: number;
   data?: any;
@@ -58,5 +49,4 @@ app.use((err: Err, req: express.Request, res: express.Response, next: express.Ne
     data: err.data,
   });
 });
-
-export default app;*/
+*/
