@@ -1,2 +1,2 @@
-# typescript-express-tutorial
-typescript와 express를 공부하기 위한 프로젝트
+## Study typescript
+This project is for study.
